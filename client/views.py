@@ -1,16 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from client import serializers
+from client.models import Client
 
-def index(request):
-    return render(request,'index.html')
 
-def contact(request):
-    return render(request,'contact.html')
-
-def product_list(request):
-    return render(request,'product_list.html')
-
-def product(request):
-    return render(request,'product.html')
+class ClientViewSet(ModelViewSet):
+    serializer_class = serializers.ClientSerializer
+    queryset = Client.objects.all()
