@@ -109,6 +109,7 @@ LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Manaus'
 
+
 USE_I18N = True
 
 USE_L10N = True
