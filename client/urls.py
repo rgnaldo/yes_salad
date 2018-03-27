@@ -1,8 +1,8 @@
+from rest_framework.routers import DefaultRouter
 
-from django.urls import path
 from client.views import ClientViewSet
 
 
-urlpatterns = [
-    path('', ClientViewSet)
-]
+router = DefaultRouter()
+
+router.register('', ClientViewSet)
