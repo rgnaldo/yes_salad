@@ -4,5 +4,5 @@ from client.views import ClientViewSet
 
 
 urlpatterns = [
-    path('client', ClientViewSet)
+    path('', ClientViewSet)
 ]
