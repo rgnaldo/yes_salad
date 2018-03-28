@@ -4,6 +4,6 @@ from order.serializers import OrderSerializer
 from order.models import Order
 
 
-class MenuViewSet(ModelViewSet):
+class OrderViewSet(ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
