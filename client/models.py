@@ -1,10 +1,13 @@
-from django.db import models
+from django.db.models import (
+    Model,
+    CharField,
+)
 
 
-class Client(models.Model):
-    name = models.CharField(verbose_name='Nome', max_length=100)
-    address = models.CharField(verbose_name='Endereço', max_length=100)
-    contact = models.CharField(verbose_name='Contato', max_length=20)
+class Client(Model):
+    name = CharField('Nome', max_length=100)
+    address = CharField('Endereço', max_length=100)
+    contact = CharField('Contato', max_length=20)
 
     class Meta:
         ordering = ['name']
