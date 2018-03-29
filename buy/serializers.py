@@ -1,15 +1,14 @@
 from rest_framework.serializers import ModelSerializer
 
 from order.serializers import OrderSerializer
-from buy.serializers import BuySerializer
-from .models import Order
+from .models import Buy
 
 
 class BuySerializer(ModelSerializer):
     order = OrderSerializer
 
     class Meta:
-        model = Order
+        model = Buy
         fields = [
-            '__all__', 'order',
+            'order',
             ]
