@@ -1,13 +1,19 @@
-from django.db import models
-from django.db.models import ForeignKey, DateTimeField, PROTECT
+from django.db.models import (
+    Model,
+    ForeignKey,
+    DateTimeField,
+    PROTECT,
+    IntegerField,
+    DecimalField,
+)
 
 from client.models import Client
 from menu.models import Menu
 
-class Order(models.Model):
+
+class Order(Model):
     client = ForeignKey(Client, on_delete=PROTECT,)
     menu = ForeignKey(Menu, on_delete=PROTECT,)
     creation_date = DateTimeField(auto_now_add=True)
-    quantidade = models.IntegerField(verbose_name='Quantidade')
-    valor_unitario = models.FloatField(verbose_name='Valor Unitario')
-    valor_total = models.FloatField(verbose_name='Valor Total')
+    quantity = IntegerField(verbose_name='Quantidade')
+    total_value = DecimalField('Valor Total', max_digits=10, decimal_places=2)
