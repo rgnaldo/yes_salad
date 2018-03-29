@@ -12,8 +12,8 @@ from menu.models import Menu
 
 
 class Order(Model):
-    client = ForeignKey(Client, on_delete=PROTECT,)
-    menu = ForeignKey(Menu, on_delete=PROTECT,)
+    client = ForeignKey(Client, verbose_name='Cliente', on_delete=PROTECT,)
+    menu = ForeignKey(Menu, verbose_name='Cardápio', on_delete=PROTECT,)
     creation_date = DateTimeField(auto_now_add=True)
-    quantity = IntegerField(verbose_name='Quantidade')
+    quantity = IntegerField('Quantidade')
     total_value = DecimalField('Valor Total', max_digits=10, decimal_places=2)
