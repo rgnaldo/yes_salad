@@ -1,9 +1,15 @@
-from django.db import models
+from django.db.models import (
+    Model,
+    DecimalField,
+    DateField,
+    CharField,
+)
 
-class Menu(models.Model):
-    descricao = models.CharField(verbose_name='Descricao', max_length=100)
-    preco = models.FloatField(verbose_name='Preço', max_length=100)
-    data = models.DateField(verbose_name='Data', max_length=20)
+
+class Menu(Model):
+
+    descricao = CharField('Descricao', max_length=100)
+    price = DecimalField('Valor Unitario', max_digits=10, decimal_places=2)
 
     class Meta:
         ordering = ['descricao']
