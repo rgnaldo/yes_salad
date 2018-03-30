@@ -2,6 +2,7 @@ from django.db.models import (
     Model,
     DecimalField,
     CharField,
+    IntegerField,
 )
 
 
